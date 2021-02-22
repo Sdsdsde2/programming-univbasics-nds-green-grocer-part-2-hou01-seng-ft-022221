@@ -52,5 +52,9 @@ def checkout(cart, coupons)
   new_cart.each_with_index do |(cart_key, cart_value), cart_index|
     total += cart_key[:count] * cart_key[:price]
   end
+  
+  if total > 100
+    
+  end
   return total
 end
