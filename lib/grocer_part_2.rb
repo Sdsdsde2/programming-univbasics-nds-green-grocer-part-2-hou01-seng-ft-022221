@@ -49,5 +49,8 @@ def checkout(cart, coupons)
   new_cart = apply_coupons(new_cart, coupons)
   new_cart = apply_clearance(new_cart)
   
-  
+  new_cart.each_with_index do |(cart_key, cart_value), cart_index|
+    total += cart_key[:count] * cart_key[:price]
+  end
+  return total
 end
